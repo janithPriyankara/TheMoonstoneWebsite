@@ -17,39 +17,34 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                <span className="text-white">THE MOONSTONE</span>
-                <br />
-                <span className="text-gray-400">(PVT) LTD</span>
+                <span className="text-white">The Moonstone (Pvt) Ltd.</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                Multidisciplinary Solutions Provider
+                Your one-stop partner for engineering, design, IT, and creative solutions.
               </p>
             </div>
 
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                The Moonstone (PVT) LTD is a multidisciplinary solutions provider offering landscape architecture, 
-                architectural design, building renovations, 2D planning, 3D modeling, and proposal preparation. 
-                We also specialize in electronics design, software development, web solutions, and 3D printing, 
-                blending creativity with technical expertise to deliver functional, aesthetic, and lasting results.
+                We deliver modern solutions in electronics, product design, architecture, IT, software, web development, photography, innovation, consultancy, and more. Now offering specialized services like electroplating and rapid prototyping. Explore our portfolio and get in touch for a quote or consultation.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-gray-300">Architectural & Design Services</span>
+                  <span className="text-gray-300">Electronics & Product Design</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-gray-300">Engineering & Technology</span>
+                  <span className="text-gray-300">IT & Software Solutions</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-gray-300">Creative & Technical Consultancy</span>
+                  <span className="text-gray-300">Architectural & Creative Services</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-gray-300">3D Printing & Prototyping</span>
+                  <span className="text-gray-300">Other Services: Electroplating & More</span>
                 </div>
               </div>
             </div>

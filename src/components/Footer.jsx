@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUp, Facebook, Instagram, Linkedin, Youtube, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -13,12 +13,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">
-              THE MOONSTONE
-              <span className="text-blue-400 ml-2">Electronics</span>
+              The Moonstone <span className="text-blue-400 ml-2">(Pvt) Ltd.</span>
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              A multidisciplinary solutions provider known for expertise in electronics, software, 
-              architecture, and creative design. We create solutions designed to perform, adapt, and endure.
+              Multidisciplinary experts in electronics, software, architecture, and design.
             </p>
             <div className="space-y-2">
               <div className="flex items-center">
@@ -27,11 +25,22 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">+94 77 870 2053 | +94 74 184 0977</span>
+                <span className="text-gray-300">+94 77 870 2053 | </span>
+                <a href="https://wa.me/94741840977" target="_blank" rel="noopener" className="flex items-center text-gray-300 hover:text-green-500">
+                  <MessageSquare className="h-4 w-4 mr-1 text-green-500" />
+                  +94 74 184 0977
+                </a>
               </div>
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-blue-400" />
-                <span className="text-gray-300">electronics.themoonstone@gmail.com</span>
+              <div className="mt-4">
+                <h4 className="font-semibold text-white mb-1">Email & WhatsApp</h4>
+                <div className="flex items-center mb-1">
+                  <Mail className="h-4 w-4 mr-2 text-blue-400" />
+                  <span className="text-gray-300">themoonstone100@gmail.com</span>
+                </div>
+                <div className="flex items-center">
+                  <MessageSquare className="h-4 w-4 mr-2 text-green-500" />
+                  <a href="https://wa.me/94741840977" target="_blank" rel="noopener" className="text-gray-300 hover:text-green-500 font-semibold">+94 74 184 0977</a>
+                </div>
               </div>
             </div>
           </div>
@@ -84,10 +93,26 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-300 text-sm mb-4 md:mb-0">
-              <p>&copy; 2025 THE MOONSTONE Electronics. All rights reserved.</p>
+              <p>&copy; 2025 The Moonstone (Pvt) Ltd. All rights reserved.</p>
               <p className="mt-1">Registration No.: PV00325510</p>
             </div>
-            
+            <div className="flex items-center space-x-4 mb-4 md:mb-0">
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" className="hover:text-blue-500">
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" className="hover:text-pink-500">
+                <Instagram className="h-6 w-6" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-blue-700">
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a href="https://wa.me/94778702053" target="_blank" rel="noopener" aria-label="WhatsApp" className="hover:text-green-500">
+                <MessageSquare className="h-6 w-6" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" className="hover:text-red-600">
+                <Youtube className="h-6 w-6" />
+              </a>
+            </div>
             <div className="flex items-center space-x-4">
               <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200">
                 Privacy Policy

@@ -68,13 +68,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Get in Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Let's build something great together. Contact us to discuss your project requirements.
           </p>
         </div>
@@ -82,7 +82,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -90,9 +90,9 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Phone Numbers</h4>
-                  <p className="text-gray-700">+94 77 870 2053</p>
-                  <p className="text-gray-700">+94 74 184 0977</p>
+                  <h4 className="font-semibold text-white mb-1">Phone Numbers</h4>
+                  <p className="text-gray-200">+94 77 870 2053</p>
+                  <p className="text-gray-200">+94 74 184 0977</p>
                 </div>
               </div>
 
@@ -101,9 +101,9 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Email Addresses</h4>
-                  <p className="text-gray-700">electronics.themoonstone@gmail.com</p>
-                  <p className="text-gray-700">studiomoonstone100@gmail.com</p>
+                  <h4 className="font-semibold text-white mb-1">Email & WhatsApp</h4>
+                  <p className="text-gray-200">themoonstone100@gmail.com</p>
+                  <p className="text-gray-200">WhatsApp for quick responses: <a href="https://wa.me/94741840977" target="_blank" rel="noopener" className="text-green-400 font-semibold">+94 74 184 0977</a></p>
                 </div>
               </div>
 
@@ -112,27 +112,27 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                  <p className="text-gray-700">
+                  <h4 className="font-semibold text-white mb-1">Address</h4>
+                  <p className="text-gray-200">
                     Sanasuma, Wawlagala<br />
                     Baddegama, Sri Lanka
                   </p>
-                  <p className="text-gray-600 text-sm mt-2">Reg. No.: PV00325510</p>
+                  <p className="text-gray-400 text-sm mt-2">Reg. No.: PV00325510</p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
-              <h4 className="font-semibold text-blue-900 mb-2">Business Hours</h4>
-              <p className="text-blue-800">Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p className="text-blue-800">Saturday: 9:00 AM - 2:00 PM</p>
-              <p className="text-blue-800">Sunday: Closed</p>
+            <div className="mt-8 p-6 bg-gray-800 rounded-lg">
+              <h4 className="font-semibold text-white mb-2">Business Hours</h4>
+              <p className="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
+              <p className="text-gray-300">Saturday: 9:00 AM - 2:00 PM</p>
+              <p className="text-gray-300">Sunday: Closed</p>
             </div>
           </div>
 
           {/* Contact Form */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">Send us a Message</h3>
             
             {isSubmitted ? (
               <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
@@ -151,7 +151,7 @@ const Contact = () => {
                 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
                       Full Name *
                     </label>
                     <input
@@ -161,8 +161,8 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                        errors.name ? 'border-red-300' : 'border-gray-300'
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-800 text-gray-100 placeholder-gray-400 ${
+                        errors.name ? 'border-red-300' : 'border-gray-700'
                       }`}
                       placeholder="Your full name"
                       maxLength="100"
@@ -171,7 +171,7 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
                       Email Address *
                     </label>
                     <input
@@ -181,8 +181,8 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                        errors.email ? 'border-red-300' : 'border-gray-300'
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-800 text-gray-100 placeholder-gray-400 ${
+                        errors.email ? 'border-red-300' : 'border-gray-700'
                       }`}
                       placeholder="your.email@example.com"
                       maxLength="100"
@@ -192,7 +192,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-200 mb-2">
                     Subject *
                   </label>
                   <input
@@ -202,8 +202,8 @@ const Contact = () => {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                      errors.subject ? 'border-red-300' : 'border-gray-300'
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-800 text-gray-100 placeholder-gray-400 ${
+                      errors.subject ? 'border-red-300' : 'border-gray-700'
                     }`}
                     placeholder="Project inquiry, consultation, etc."
                     maxLength="200"
@@ -212,7 +212,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
                     Message *
                   </label>
                   <textarea
@@ -222,14 +222,14 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none ${
-                      errors.message ? 'border-red-300' : 'border-gray-300'
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none bg-gray-800 text-gray-100 placeholder-gray-400 ${
+                      errors.message ? 'border-red-300' : 'border-gray-700'
                     }`}
                     placeholder="Please describe your project requirements, timeline, and any specific questions you have..."
                     maxLength="1000"
                   />
                   {errors.message && <p className="text-red-600 text-sm mt-1">{errors.message}</p>}
-                  <p className="text-gray-500 text-sm mt-1">{formData.message.length}/1000 characters</p>
+                  <p className="text-gray-400 text-sm mt-1">{formData.message.length}/1000 characters</p>
                 </div>
 
                 <Button 
@@ -246,9 +246,9 @@ const Contact = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="bg-gray-50 rounded-lg p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h3>
-            <p className="text-gray-700 mb-6">
+          <div className="bg-gray-800 rounded-lg p-8">
+            <h3 className="text-xl font-bold text-white mb-4">Ready to Start Your Project?</h3>
+            <p className="text-gray-300 mb-6">
               We're here to help bring your ideas to life. Whether you need electronics design, 
               software development, or architectural consultation, our team is ready to deliver 
               exceptional results.
@@ -263,7 +263,7 @@ const Contact = () => {
               <Button 
                 variant="outline" 
                 className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                onClick={() => window.location.href = 'mailto:electronics.themoonstone@gmail.com'}
+                onClick={() => window.location.href = 'mailto:themoonstone100@gmail.com'}
               >
                 Send Email
               </Button>

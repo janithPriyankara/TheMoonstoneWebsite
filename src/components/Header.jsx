@@ -25,7 +25,7 @@ const Header = () => {
             <img 
               src="/logo.png" 
               alt="The Moonstone (PVT) LTD" 
-              className="h-10 w-auto mr-3"
+              className="h-14 w-auto mr-3 drop-shadow-lg opacity-95"
             />
             <div className="text-white font-bold text-xl">
               THE MOONSTONE
