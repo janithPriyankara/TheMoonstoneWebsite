@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User, LogOut, FileText } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import { Button } from './ui/button';
+import AuthModal from './Auth/AuthModal';
 
-const Header = () => {
+const Header = ({ onShowDashboard }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const { user, logout } = useAuth();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,6 +20,20 @@ const Header = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+  };
+
+  const handleAuthSuccess = (userData) => {
+    setShowAuthModal(false);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setShowUserMenu(false);
+  };
+
+  const handleDashboardClick = () => {
+    onShowDashboard();
+    setShowUserMenu(false);
   };
 
   return (
@@ -33,7 +53,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 items-center">
             <button
               onClick={() => scrollToSection('home')}
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
@@ -64,6 +84,45 @@ const Header = () => {
             >
               Contact Us
             </button>
+
+            {/* Auth Section */}
+            {user ? (
+              <div className="relative">
+                <button
+                  onClick={() => setShowUserMenu(!showUserMenu)}
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
+                >
+                  <User className="h-5 w-5" />
+                  <span>{user.name}</span>
+                </button>
+                
+                {showUserMenu && (
+                  <div className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg py-2 z-50">
+                    <button
+                      onClick={handleDashboardClick}
+                      className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 w-full text-left"
+                    >
+                      <FileText className="h-4 w-4" />
+                      <span>Dashboard</span>
+                    </button>
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 w-full text-left"
+                    >
+                      <LogOut className="h-4 w-4" />
+                      <span>Logout</span>
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Button
+                onClick={() => setShowAuthModal(true)}
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                Login / Sign Up
+              </Button>
+            )}
           </nav>
 
           {/* Mobile menu button */}
@@ -111,10 +170,49 @@ const Header = () => {
               >
                 Contact Us
               </button>
+
+              {/* Mobile Auth Section */}
+              <div className="border-t border-gray-700 pt-2 mt-2">
+                {user ? (
+                  <>
+                    <button
+                      onClick={handleDashboardClick}
+                      className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 w-full text-left"
+                    >
+                      <FileText className="h-4 w-4" />
+                      <span>Dashboard</span>
+                    </button>
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 w-full text-left"
+                    >
+                      <LogOut className="h-4 w-4" />
+                      <span>Logout</span>
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setShowAuthModal(true);
+                      setIsMenuOpen(false);
+                    }}
+                    className="block px-3 py-2 text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium w-full text-left"
+                  >
+                    Login / Sign Up
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         )}
       </div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+        onAuthSuccess={handleAuthSuccess}
+      />
     </header>
   );
 };
