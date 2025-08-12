@@ -277,18 +277,14 @@ const Portfolio = () => {
         onClick={() => setSelectedCategory(category)}
       >
         <div className="relative overflow-hidden h-64 bg-gray-600">
-          {/* Always show main image, with slideshow overlay on hover */}
+          {/* Show a static image by default and overlay the slideshow on hover */}
           <img
-            src={data.mainImage}
+            src={data.mainImage || data.slideImages[0]}
             alt={category}
-            className="w-full h-full object-cover relative z-0"
-            onLoad={() => console.log(`✅ Image loaded: ${category}`, data.mainImage)}
-            onError={(e) => {
-              console.log(`❌ Image failed: ${category}`, data.mainImage);
-              e.target.style.display = 'none';
-            }}
+            className="w-full h-full object-cover"
+            loading="lazy"
           />
-          
+
           {/* Slideshow overlay only on hover */}
           {isHovered && (
             <div className="absolute inset-0 z-10">
