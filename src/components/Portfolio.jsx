@@ -19,7 +19,6 @@ import img9 from '../assets/LaRW5x093xOO.jpg';
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [hoveredCategory, setHoveredCategory] = useState(null);
 
   // Categories with detailed project data - reorganized by related groups
   const categoriesData = {
@@ -27,7 +26,7 @@ const Portfolio = () => {
     'Architectural Design': {
       title: 'Architectural Design',
       description: 'Innovative and sustainable architectural solutions',
-      mainImage: img2,
+      thumbnail: img2,
       slideImages: [img2, img1, img9],
       projects: [
         {
@@ -59,7 +58,7 @@ const Portfolio = () => {
     'Landscape Architecture': {
       title: 'Landscape Architecture',
       description: 'Sustainable and innovative outdoor space design',
-      mainImage: img1,
+      thumbnail: img1,
       slideImages: [img1, img2, img3],
       projects: [
         {
@@ -103,7 +102,7 @@ const Portfolio = () => {
     'Building Renovation': {
       title: 'Building Renovation',
       description: 'Restoration and modernization of existing structures',
-      mainImage: img3,
+      thumbnail: img3,
       slideImages: [img3, img5, img2],
       projects: [
         {
@@ -123,7 +122,7 @@ const Portfolio = () => {
     '3D Modeling & Rendering': {
       title: '3D Modeling & Rendering',
       description: 'Photorealistic visualizations and 3D presentations',
-      mainImage: img4,
+      thumbnail: img4,
       slideImages: [img4, img7, img8],
       projects: [
         {
@@ -143,7 +142,7 @@ const Portfolio = () => {
     '2D Drafting & Planning': {
       title: '2D Drafting & Planning',
       description: 'Technical drawings and construction documentation',
-      mainImage: img5,
+      thumbnail: img5,
       slideImages: [img5, img1, img6],
       projects: [
         {
@@ -163,7 +162,7 @@ const Portfolio = () => {
     'Electronics Design': {
       title: 'Electronics Design',
       description: 'PCB design and electronic system development',
-      mainImage: img6,
+      thumbnail: img6,
       slideImages: [img6, img8, img7],
       projects: [
         {
@@ -183,7 +182,7 @@ const Portfolio = () => {
     'Software & Web Development': {
       title: 'Software & Web Development',
       description: 'Full-stack applications and web solutions',
-      mainImage: img7,
+      thumbnail: img7,
       slideImages: [img7, img8, img9],
       projects: [
         {
@@ -203,7 +202,7 @@ const Portfolio = () => {
     '3D Printing & Prototyping': {
       title: '3D Printing & Prototyping',
       description: 'Rapid prototyping and manufacturing solutions',
-      mainImage: img8,
+      thumbnail: img8,
       slideImages: [img8, img6, img4],
       projects: [
         {
@@ -223,7 +222,7 @@ const Portfolio = () => {
     'Technical & Creative Consultancy': {
       title: 'Technical & Creative Consultancy',
       description: 'Strategic consulting for business transformation',
-      mainImage: img9,
+      thumbnail: img9,
       slideImages: [img9, img1, img5],
       projects: [
         {
@@ -277,18 +276,13 @@ const Portfolio = () => {
         onClick={() => setSelectedCategory(category)}
       >
         <div className="relative overflow-hidden h-64 bg-gray-600">
-          {/* Always show main image, with slideshow overlay on hover */}
+          {/* Show a static image by default and overlay the slideshow on hover */}
           <img
-            src={data.mainImage}
+            src={data.thumbnail || data.slideImages[0]}
             alt={category}
-            className="w-full h-full object-cover relative z-0"
-            onLoad={() => console.log(`✅ Image loaded: ${category}`, data.mainImage)}
-            onError={(e) => {
-              console.log(`❌ Image failed: ${category}`, data.mainImage);
-              e.target.style.display = 'none';
-            }}
+            className="w-full h-full object-cover"
           />
-          
+
           {/* Slideshow overlay only on hover */}
           {isHovered && (
             <div className="absolute inset-0 z-10">
